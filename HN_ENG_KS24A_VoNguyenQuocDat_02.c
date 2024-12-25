@@ -190,6 +190,8 @@ int main(void) {
     			printf("Mang da duoc sap xep giam dan.\n");
 				break;
 			}
+			default :
+				printf("Lua chon khong hop le!");
 		}
 	}
 }
