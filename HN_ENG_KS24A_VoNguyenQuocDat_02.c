@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define MAX_SIZE 100
 
 void displayArray(int array[], int size) {
@@ -17,6 +18,13 @@ void displayArray(int array[], int size) {
 	}
     printf("\n");
 }
+	int isPrime(int n) {
+	    if (n <= 1) return 0;
+	    for (int i = 2; i <= sqrt(n); ++i) {
+	        if (n % i == 0) return 0;
+	    }
+	    return 1;
+	}
 
 int main(void) {
     int arrayInt[MAX_SIZE];
@@ -156,6 +164,17 @@ int main(void) {
 				break;
 			}
 			case 9: {
+				int found = 0;
+			    printf("Cac so nguyen to sau khi binh phuong:\n");
+			    for (int i = 0; i < size; ++i) {
+			        if (isPrime(arrayInt[i])) {
+			            found = 1;
+			            printf("%d^2 = %d\n", arrayInt[i], arrayInt[i] * arrayInt[i]);
+			        }
+			    }
+			    if (!found) {
+			        printf("Khong co so nguyen to nao trong mang.\n");
+			    }
 				break;
 			}
 			case 10: {
